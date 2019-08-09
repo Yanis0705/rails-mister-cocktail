@@ -4,12 +4,14 @@
 
 <div class="card-product">
   <% @cocktails.each do |cocktail| %>
-  <img src=<%= cocktail[:image_url] %>/>
+  <%= cl_image_tag(cocktail.photo,
+      width: 150, height: 150, crop: :fill) %>
     <div class="card-product-infos">
-      <h2><%= link_to cocktail[:name], cocktail_path(cocktail) %></h2>
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+      <%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure?' } %>
     </div>
   <% end %>
 </div>
 
-
-
+<%= cl_image_tag("https://res.cloudinary.com/dnoix9ft9/image/upload/v1565351353/lzl8vvpdrdmjdwtouaax.jpg" ,
+      width: 400, height: 300, crop: :fill) %>
