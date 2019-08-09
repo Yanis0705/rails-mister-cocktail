@@ -12,6 +12,7 @@ class DosesController < ApplicationController
 
   def create
     @dose = Dose.new(dose_params)
+    @dose.description = "#{@dose.description} #{@dose.ingredient_id}"
     @dose.cocktail = @cocktail
 
     if @dose.save

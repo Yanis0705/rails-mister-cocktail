@@ -1,17 +1,21 @@
-<h1>List of Cocktails</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://s3-media1.fl.yelpcdn.com/bphoto/91uMC6R72T6jH-0dU0vfnQ/o.jpg)">
+  <h1 class="text-center"><strong>List of Cocktails</strong></h1>
+</div>
 
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
+<div class="container">
 
-<div class="card-product">
+  <%= link_to 'Add a new cocktail', new_cocktail_path,  class: "btn btn-ghost" %>
+
   <% @cocktails.each do |cocktail| %>
-  <%= cl_image_tag(cocktail.photo,
-      width: 150, height: 150, crop: :fill) %>
-    <div class="card-product-infos">
-      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-      <%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure?' } %>
+    <div class="card-product mt-3 mb-3">
+      <%= cl_image_tag(cocktail.photo, width: 150, height: 150, crop: :fill) %>
+        <div class="card-product-infos">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          <%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: { confirm: 'are you sure?' } %>
+        </div>
     </div>
   <% end %>
 </div>
 
-<%= cl_image_tag("https://res.cloudinary.com/dnoix9ft9/image/upload/v1565351353/lzl8vvpdrdmjdwtouaax.jpg" ,
-      width: 400, height: 300, crop: :fill) %>
+
+
