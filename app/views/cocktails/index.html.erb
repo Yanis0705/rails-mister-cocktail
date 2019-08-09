@@ -2,6 +2,11 @@
 
 <% @cocktails.each do |cocktail| %>
 <h3> <%= link_to cocktail[:name], cocktail_path(cocktail) %></h3>
+<img src=<%= cocktail[:image_url]  %>>
+
+
 <% end %>
 
 <%= link_to 'Add a new cocktail', new_cocktail_path %>
+
+

@@ -2,7 +2,7 @@ require 'open-uri'
 require 'JSON'
 
 Ingredient.destroy_all
-Cocktail.destroy_all
+
 puts "cleared"
 
 puts "created ingredients"
@@ -16,10 +16,5 @@ objs["drinks"].each do |item|
     name: ingredient
   )
 end
-
-Cocktail.create!(name: "Mojito")
-Cocktail.create!(name: "Pina colada")
-Cocktail.create!(name: "Ti punch")
-Cocktail.create!(name: "Blue lagoon")
 
 puts "Finished!"
